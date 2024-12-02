@@ -29,9 +29,19 @@ public class MazeGenerator : MonoBehaviour
 
     public List<MazeCell> exitCandidates = new List<MazeCell>();
 
+    public int mazeSeed;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("MazeSeed"))
+        {
+            mazeSeed = PlayerPrefs.GetInt("MazeSeed");
+        } else
+        {
+            mazeSeed = Random.Range(0, int.MaxValue);
+        }
+        Random.InitState(mazeSeed);
         StartCoroutine(InitializeMaze());
     }
 

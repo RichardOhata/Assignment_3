@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
 
         // Save HP
         PlayerPrefs.SetInt("HP", hp);
-
+        PlayerPrefs.SetInt("MazeSeed",mazeGenerator.mazeSeed);
         PlayerPrefs.Save(); // Commit changes
         Debug.Log("Player and enemy positions saved.");
     }
@@ -177,6 +177,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("EnemyPosY");
         PlayerPrefs.DeleteKey("EnemyPosZ");
         PlayerPrefs.DeleteKey("HP");
+        PlayerPrefs.DeleteKey("MazeSeed");
 
         // Commit changes
         PlayerPrefs.Save();

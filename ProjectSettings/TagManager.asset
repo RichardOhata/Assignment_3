@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Canvas
   - bgm
+  - Ball
+  - MazeGenerator
   layers:
   - Default
   - TransparentFX
